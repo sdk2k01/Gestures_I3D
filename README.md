@@ -31,4 +31,4 @@ python3 -m pip install requirements.txt
 
 ## Contributing to this Project
 
-For contribution guidelines, check out our contributing page.
+For contribution guidelines, check out our [contributing page](https://github.com/sdk2k01/Gestures_I3D/blob/main/CONTRIBUTING.md).

@@ -5,7 +5,7 @@
 - Python 3.6 or above ( ideally python3.10+ )
 - CMake
 
-## Committing Changes
+## Committing Changes in Local Reposiroty
 
 1. Switch to a new branch ( ex - `Feature` ), if you are working on a new feature or fixing a bug.
  - `zsh` / `bash` / `git-bash`
@@ -14,7 +14,7 @@
 git checkout -b <branch_name>
 ```
 
-2. Create an isolated virtual environment as described in the project's README section.
+2. Create an isolated virtual environment as described in the project's [README](https://github.com/sdk2k01/Gestures_I3D/blob/main/README.md) section.
 
 3. Activate the virtual environment:
  - `zsh` or `bash`
