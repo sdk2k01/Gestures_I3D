@@ -2,10 +2,10 @@
 
 ## Pre-Requisites
 
-- Python 3.6 or above ( ideally python3.10+ )
+- Python 3.6 or above ( ideally Python 3.10+ )
 - CMake
 
-## Committing Changes in Local Reposiroty
+## Committing Changes in Local Repository
 
 1. Switch to a new branch ( ex - `Feature` ), if you are working on a new feature or fixing a bug.
  - `zsh` / `bash` / `git-bash`
