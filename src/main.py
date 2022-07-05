@@ -5,7 +5,8 @@ import numpy as np
 # global variables
 BG = None
 
-def run_avg(image: np.ndarray, aWeight: float)->None:
+
+def run_avg(image: np.ndarray, a_Weight: float) -> None:
     global BG
     # initialize the background
     if BG is None:
@@ -13,9 +14,10 @@ def run_avg(image: np.ndarray, aWeight: float)->None:
         return
 
     # compute weighted average, accumulate it and update the background
-    cv2.accumulateWeighted(image, BG, aWeight)
+    cv2.accumulateWeighted(image, BG, a_Weight)
 
-def segment(image: np.ndarray, threshold=25)->tuple:
+
+def segment(image: np.ndarray, threshold=25) -> tuple:
     global BG
     # find the absolute difference between background and current frame
     diff = cv2.absdiff(BG.astype("uint8"), image)
@@ -24,7 +26,9 @@ def segment(image: np.ndarray, threshold=25)->tuple:
     thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)[1]
 
     # get the contours in the thresholded image
-    (cnts, _) = cv2.findContours(thresholded.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    (cnts, _) = cv2.findContours(
+        thresholded.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+    )
 
     # return None, if no contours detected
     if len(cnts) == 0:
@@ -34,12 +38,10 @@ def segment(image: np.ndarray, threshold=25)->tuple:
         segmented = max(cnts, key=cv2.contourArea)
         return (thresholded, segmented)
 
-#-----------------
-# MAIN FUNCTION
-#-----------------
+
 if __name__ == "__main__":
     # initialize weight for running average
-    aWeight = 0.5
+    a_Weight = 0.5
 
     # get the reference to the webcam
     camera = cv2.VideoCapture(0)
@@ -51,7 +53,7 @@ if __name__ == "__main__":
     num_frames = 0
 
     # keep looping, until interrupted
-    while(True):
+    while True:
         # get the current frame
         (grabbed, frame) = camera.read()
 
@@ -77,7 +79,7 @@ if __name__ == "__main__":
         # to get the background, keep looking till a threshold is reached
         # so that our running average model gets calibrated
         if num_frames < 30:
-            run_avg(gray, aWeight)
+            run_avg(gray, a_Weight)
         else:
             # segment the hand region
             hand = segment(gray)
@@ -93,7 +95,7 @@ if __name__ == "__main__":
                 cv2.imshow("Thesholded", thresholded)
 
         # draw the segmented hand
-        cv2.rectangle(clone, (left, top), (right, bottom), (0,255,0), 2)
+        cv2.rectangle(clone, (left, top), (right, bottom), (0, 255, 0), 2)
 
         # increment the number of frames
         num_frames += 1
@@ -106,9 +108,7 @@ if __name__ == "__main__":
 
         # if the user pressed "q", then stop looping
         if keypress == ord("q"):
-             # free up memory
+            # free up memory
             camera.release()
             cv2.destroyAllWindows()
             break
-
-       
