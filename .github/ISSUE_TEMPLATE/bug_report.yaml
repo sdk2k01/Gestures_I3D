@@ -3,7 +3,7 @@ description: Report a bug you have found
 title: '[Bug]: '
 labels: 'bug'
 assignees:
- - sdk2k01
+ - 
 body:
   - type: markdown
     attributes:
