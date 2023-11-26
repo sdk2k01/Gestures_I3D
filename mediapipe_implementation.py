@@ -1,6 +1,5 @@
 import cv2
 import mediapipe as mp
-import pyautogui
 
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
