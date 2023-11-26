@@ -4,6 +4,8 @@ Desktop application to control functionalities using hand-gestures.
 ## Dependencies
 
 - Python 3.6 or above ( ideally python 3.10+ )
+<br><i>NOTE:</i> It is recommended NOT to use python 3.12 as some packages (e.g: distutils) are deprecated which
+may affect installation of other packages. Python v3.10.11 was the latest 'stable' version which tested successfully.
 
 ## Installation Steps
 
@@ -22,6 +24,13 @@ python3 -m venv ./venv
  ```zsh
 source ./venv/bin/activate
  ```
+
+ - or, for Windows users, `pwsh`
+
+ ```zsh
+./venv/Scripts/Activate
+ ```
+
 
 ### 3. Install all Required Packages
 
