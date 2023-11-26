@@ -1,3 +1,6 @@
 imutils==0.5.4
-numpy==1.22.2
-opencv_python==4.6.0.66
+mediapipe==0.10.8
+numpy==1.23.0
+opencv_contrib_python==4.8.1.78
+opencv_python==4.8.1.78
+PyAutoGUI==0.9.54
