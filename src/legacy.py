@@ -46,7 +46,7 @@ if __name__ == "__main__":
     # get the reference to the webcam
     camera = cv2.VideoCapture(0)
 
-    # region of interest (ROI) coordinates
+    # denote region of interest (ROI) coordinates
     top, right, bottom, left = 10, 350, 225, 590
 
     # initialize num of frames
